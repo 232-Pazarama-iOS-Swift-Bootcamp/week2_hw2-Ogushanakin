@@ -171,7 +171,10 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hia-mT-awD" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
-                                    <state key="normal" title="xʸ"/>
+                                    <state key="normal" title="x²"/>
+                                    <connections>
+                                        <action selector="secondPowerofNumberButton:" destination="-1" eventType="touchUpInside" id="gHc-yU-2r2"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLF-Sp-fin" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="78" y="0.0" width="68" height="60"/>

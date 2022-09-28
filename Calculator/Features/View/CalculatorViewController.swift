@@ -32,7 +32,11 @@ final class CalculatorViewController: UIViewController {
     
     // MARK: - ACTIONS
     ///Her butona ilgili fonksiyonları atandı.
-    @IBAction func powersOfTenButton(_ sender: Any) {
+    @IBAction func secondPowerofNumberButton(_ sender: UIButton) {
+        playSound()
+        secondPowerAction()
+    }
+    @IBAction func powersOfTenButton(_ sender: UIButton) {
         playSound()
         powersOfTenAction()
     }
@@ -64,8 +68,7 @@ final class CalculatorViewController: UIViewController {
     
     @IBAction func squareButton(_ sender: UIButton) {
         playSound()
-        let square = Double(operations)
-        resultLabel.text = String(sqrt(square!))
+        squareAction()
     }
     
     @IBAction func percentButton(_ sender: UIButton) {
@@ -180,11 +183,33 @@ extension CalculatorViewController {
         }
     }
     
+    private func secondPowerAction() {
+        guard var number = Int(operations) else {
+            let alert = UIAlertController(
+                title: "Invalid Input",
+                message: "First enter the number then choose action.",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        number = number * number
+        resultLabel.text = String(number)
+    }
+    
     private func powersOfTenAction() {
-        let power = Int(operations)
+        guard let power = Int(operations) else {
+            let alert = UIAlertController(
+                title: "Invalid Input",
+                message: "First enter the number then choose action.",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         var result = 1
-        if (power! > 0) {
-            for _ in 1...power! {
+        if (power > 0) {
+            for _ in 1...power {
                 result *= 10
             }
             resultLabel.text = String(result)
@@ -193,11 +218,32 @@ extension CalculatorViewController {
         }
     }
     
+    private func squareAction() {
+        guard let square = Double(operations)  else {
+            let alert = UIAlertController(
+                title: "Invalid Input",
+                message: "First enter the number then choose action.",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        resultLabel.text = String(sqrt(square))
+    }
+    
     private func factorialAction() {
-        let factorial = Double(operations)
+        guard let factorial = Double(operations) else {
+            let alert = UIAlertController(
+                title: "Invalid Input",
+                message: "First enter the number then choose action.",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
         var result = 1
-        if (Int(factorial!) > 0) {
-            for i in 1...Int(factorial!) {
+        if (Int(factorial) > 0) {
+            for i in 1...Int(factorial) {
                 result *= i
             }
         }
