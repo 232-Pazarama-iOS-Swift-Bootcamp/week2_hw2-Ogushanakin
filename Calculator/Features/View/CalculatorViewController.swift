@@ -48,7 +48,8 @@ final class CalculatorViewController: UIViewController {
     
     @IBAction func squareButton(_ sender: UIButton) {
         playSound()
-        addToWorkings(value: "√")
+        var square = Double(operations)
+        resultLabel.text = String(sqrt(square!))
     }
     
     @IBAction func percentButton(_ sender: UIButton) {
