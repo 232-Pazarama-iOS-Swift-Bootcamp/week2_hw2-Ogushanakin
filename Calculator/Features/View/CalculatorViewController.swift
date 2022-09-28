@@ -31,7 +31,19 @@ final class CalculatorViewController: UIViewController {
     
     // MARK: - ACTIONS
     
-    @IBAction func equalsButton(_ sender: Any) {
+    @IBAction func xFactorial( _ sender: UIButton) {
+        playSound()
+        let factorial = Double(operations)
+        var result = 1
+        if(Int(factorial!) > 0) {
+            for i in 1...Int(factorial!) {
+                result *= i
+            }
+        }
+        resultLabel.text = String(result)
+    }
+    
+    @IBAction func equalsButton(_ sender: UIButton) {
         playSound()
         equalsAction()
     }
@@ -48,7 +60,7 @@ final class CalculatorViewController: UIViewController {
     
     @IBAction func squareButton(_ sender: UIButton) {
         playSound()
-        var square = Double(operations)
+        let square = Double(operations)
         resultLabel.text = String(sqrt(square!))
     }
     
