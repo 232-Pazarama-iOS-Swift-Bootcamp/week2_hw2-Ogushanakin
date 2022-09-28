@@ -1,3 +1,5 @@
+<img width="438" alt="Ekran Resmi 2022-09-28 15 00 11" src="https://user-images.githubusercontent.com/55364051/192775472-29a8b145-3b04-4fe6-8255-cb2a9975d1a6.png"><img width="482" alt="Ekran Resmi 2022-09-28 15 01 35" src="https://user-images.githubusercontent.com/55364051/192775670-1c50e983-101e-470e-a514-b0cd8eb2c528.png">
+<img width="841" alt="Ekran Resmi 2022-09-28 15 02 15" src="https://user-images.githubusercontent.com/55364051/192775504-30f7487a-758c-498b-bc2b-d01f960de88d.png">
 
 # Pazarama iOS Bootcamp - Hafta 2 - Ödev  
  
