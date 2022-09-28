@@ -14,6 +14,7 @@
 		7109BAE728E1D08E00E8890D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7109BAE628E1D08E00E8890D /* CustomButton.swift */; };
 		7109BAEC28E1D11A00E8890D /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7109BAEA28E1D11A00E8890D /* CalculatorViewController.swift */; };
 		7109BAED28E1D11A00E8890D /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7109BAEB28E1D11A00E8890D /* CalculatorViewController.xib */; };
+		712A506728E474EA00791825 /* CalculatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712A506628E474EA00791825 /* CalculatorProtocol.swift */; };
 		719F18E228E2F145004531B6 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 719F18E128E2F145004531B6 /* click.wav */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		7109BAE628E1D08E00E8890D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		7109BAEA28E1D11A00E8890D /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		7109BAEB28E1D11A00E8890D /* CalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		712A506628E474EA00791825 /* CalculatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorProtocol.swift; sourceTree = "<group>"; };
 		719F18E128E2F145004531B6 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 		7109BAEE28E1E1F400E8890D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				712A506628E474EA00791825 /* CalculatorProtocol.swift */,
 				7109BAEA28E1D11A00E8890D /* CalculatorViewController.swift */,
 				7109BAEB28E1D11A00E8890D /* CalculatorViewController.xib */,
 			);
@@ -172,6 +175,7 @@
 				7109BAEC28E1D11A00E8890D /* CalculatorViewController.swift in Sources */,
 				7109BAE728E1D08E00E8890D /* CustomButton.swift in Sources */,
 				7109BAD328E1CF7800E8890D /* AppDelegate.swift in Sources */,
+				712A506728E474EA00791825 /* CalculatorProtocol.swift in Sources */,
 				7109BAD528E1CF7800E8890D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

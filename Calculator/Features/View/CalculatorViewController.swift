@@ -8,19 +8,20 @@
 import UIKit
 import AVFoundation
 
-final class CalculatorViewController: UIViewController {
+final class CalculatorViewController: UIViewController, CalculatorActionsProtocols {
     
     // MARK: - Properties
     ///tıklanan buttondan alınan sayıları tuttuğumuz ve ekranda gösterdiğimiz değişken
-    private lazy var operations: String = ""
+    var operations: String = ""
+    
     ///button tıklanma sesleri
-    private var audioPlayer : AVAudioPlayer!
-    private let url = Bundle.main.url(forResource: "click", withExtension: "wav")
+    var audioPlayer : AVAudioPlayer!
+    var url = Bundle.main.url(forResource: "click", withExtension: "wav")
     
     // MARK: - UI Elements
     ///İşlemleri gördüğümüz ve sonucu gönderdiğimiz iki label.
-    @IBOutlet weak var operationsLabel: UILabel!
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet var operationsLabel: UILabel!
+    @IBOutlet var resultLabel: UILabel!
     
     
     // MARK: - Life Cycle
@@ -152,169 +153,3 @@ final class CalculatorViewController: UIViewController {
     }
 }
 
-extension CalculatorViewController {
-    
-    // MARK: - FUNCTIONS
-    ///IBAction'ların içerisinde çağırdığımız fonksiyonlar extension ile buradan çekildi, kod okunurluğuna pozitif katkı amacıyla.
-    private func addToWorkings(value: String) {
-        operations = operations + value
-        operationsLabel.text = operations
-    }
-    
-    private func specialCharacter (char: Character) -> Bool {
-        if (char == "*") {
-            return true
-        }
-        if (char == "/") {
-            return true
-        }
-        if (char == "+") {
-            return true
-        }
-        return false
-    }
-    
-    private func formatResult(result: Double) -> String {
-        if (result.truncatingRemainder(dividingBy: 1) == 0) {
-            return String(format: "%.0f", result)
-        }
-        else {
-            return String(format: "%.2f", result)
-        }
-    }
-    
-    private func secondPowerAction() {
-        guard var number = Int(operations) else {
-            let alert = UIAlertController(
-                title: "Invalid Input",
-                message: "First enter the number then choose action.",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default))
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        number = number * number
-        resultLabel.text = String(number)
-    }
-    
-    private func powersOfTenAction() {
-        guard let power = Int(operations) else {
-            let alert = UIAlertController(
-                title: "Invalid Input",
-                message: "First enter the number then choose action.",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default))
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        var result = 1
-        if (power > 0) {
-            for _ in 1...power {
-                result *= 10
-            }
-            resultLabel.text = String(result)
-        } else {
-            resultLabel.text = "0"
-        }
-    }
-    
-    private func squareAction() {
-        guard let square = Double(operations)  else {
-            let alert = UIAlertController(
-                title: "Invalid Input",
-                message: "First enter the number then choose action.",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default))
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        resultLabel.text = String(sqrt(square))
-    }
-    
-    private func factorialAction() {
-        guard let factorial = Double(operations) else {
-            let alert = UIAlertController(
-                title: "Invalid Input",
-                message: "First enter the number then choose action.",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default))
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        var result = 1
-        if (Int(factorial) > 0) {
-            for i in 1...Int(factorial) {
-                result *= i
-            }
-        }
-        resultLabel.text = String(result)
-    }
-    private func clearAll() {
-        operations = ""
-        operationsLabel.text = ""
-        resultLabel.text = ""
-    }
-    
-    private func deleteAction() {
-        if (!operations.isEmpty) {
-            operations.removeLast()
-            operationsLabel.text = operations
-        }
-    }
-    
-    private func validInput() -> Bool {
-        var count = 0
-        var funcCharIndexes = [Int]()
-        
-        for char in operations {
-            if (specialCharacter(char: char)) {
-                funcCharIndexes.append(count)
-            }
-            count += 1
-        }
-        
-        var previous: Int = -1
-        
-        for index in funcCharIndexes {
-            if (index == 0) {
-                return false
-            }
-            
-            if (index == operations.count - 1) {
-                return false
-            }
-            
-            if (previous != -1) {
-                if (index - previous == 1) {
-                    return false
-                }
-            }
-            previous = index
-        }
-        return true
-    }
-    
-    private func equalsAction() {
-        if (validInput()) {
-            let checkedWorkingsForPercent = operations.replacingOccurrences(of: "%", with: "*0.01")
-            let expression = NSExpression(format: checkedWorkingsForPercent)
-            let result = expression.expressionValue(with: nil, context: nil) as! Double
-            let resultString = formatResult(result: result)
-            resultLabel.text = resultString
-        } else {
-            let alert = UIAlertController(
-                title: "Invalid Input",
-                message: "Calculator unable to do math based on input",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-}
-
-extension CalculatorViewController: AVAudioPlayerDelegate {
-    private func playSound() {
-        audioPlayer = try? AVAudioPlayer(contentsOf: url!)
-        audioPlayer.play()
-    }
-}
