@@ -11,13 +11,14 @@ import AVFoundation
 final class CalculatorViewController: UIViewController {
     
     // MARK: - Properties
-    
+    ///tıklanan buttondan alınan sayıları tuttuğumuz ve ekranda gösterdiğimiz değişken
     private lazy var operations: String = ""
+    ///button tıklanma sesleri
     private var audioPlayer : AVAudioPlayer!
     private let url = Bundle.main.url(forResource: "click", withExtension: "wav")
     
     // MARK: - UI Elements
-    
+    ///İşlemleri gördüğümüz ve sonucu gönderdiğimiz iki label.
     @IBOutlet weak var operationsLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -30,17 +31,20 @@ final class CalculatorViewController: UIViewController {
     }
     
     // MARK: - ACTIONS
+    ///Her butona ilgili fonksiyonları atandı.
+    @IBAction func powersOfTenButton(_ sender: Any) {
+        playSound()
+        powersOfTenAction()
+    }
+    
+    @IBAction func piNumberButton(_ sender: UIButton) {
+        playSound()
+        addToWorkings(value: "3.14")
+    }
     
     @IBAction func xFactorial( _ sender: UIButton) {
         playSound()
-        let factorial = Double(operations)
-        var result = 1
-        if(Int(factorial!) > 0) {
-            for i in 1...Int(factorial!) {
-                result *= i
-            }
-        }
-        resultLabel.text = String(result)
+        factorialAction()
     }
     
     @IBAction func equalsButton(_ sender: UIButton) {
@@ -143,10 +147,12 @@ final class CalculatorViewController: UIViewController {
         playSound()
         addToWorkings(value: "9")
     }
-    
+}
+
+extension CalculatorViewController {
     
     // MARK: - FUNCTIONS
-    
+    ///IBAction'ların içerisinde çağırdığımız fonksiyonlar extension ile buradan çekildi, kod okunurluğuna pozitif katkı amacıyla.
     private func addToWorkings(value: String) {
         operations = operations + value
         operationsLabel.text = operations
@@ -174,24 +180,43 @@ final class CalculatorViewController: UIViewController {
         }
     }
     
+    private func powersOfTenAction() {
+        let power = Int(operations)
+        var result = 1
+        if (power! > 0) {
+            for _ in 1...power! {
+                result *= 10
+            }
+            resultLabel.text = String(result)
+        } else {
+            resultLabel.text = "0"
+        }
+    }
     
-}
-
-extension CalculatorViewController: CalculatorOperations {
-    func clearAll() {
+    private func factorialAction() {
+        let factorial = Double(operations)
+        var result = 1
+        if (Int(factorial!) > 0) {
+            for i in 1...Int(factorial!) {
+                result *= i
+            }
+        }
+        resultLabel.text = String(result)
+    }
+    private func clearAll() {
         operations = ""
         operationsLabel.text = ""
         resultLabel.text = ""
     }
     
-    func deleteAction() {
+    private func deleteAction() {
         if (!operations.isEmpty) {
             operations.removeLast()
             operationsLabel.text = operations
         }
     }
     
-    func validInput() -> Bool {
+    private func validInput() -> Bool {
         var count = 0
         var funcCharIndexes = [Int]()
         
@@ -223,7 +248,7 @@ extension CalculatorViewController: CalculatorOperations {
         return true
     }
     
-    func equalsAction() {
+    private func equalsAction() {
         if (validInput()) {
             let checkedWorkingsForPercent = operations.replacingOccurrences(of: "%", with: "*0.01")
             let expression = NSExpression(format: checkedWorkingsForPercent)

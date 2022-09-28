@@ -20,53 +20,65 @@
             <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp7-5E-RTN">
-                    <rect key="frame" x="30" y="206.33333333333331" width="351" height="119.66666666666666"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="100"/>
+                    <rect key="frame" x="30" y="254.33333333333334" width="351" height="71.666666666666657"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="75"/>
                     <color key="textColor" red="0.6549019814" green="0.75686275960000005" blue="0.82745099070000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
+                    <variation key="heightClass=compact-widthClass=compact">
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="90"/>
+                    </variation>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="√225" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Z1-4A-BLw">
-                    <rect key="frame" x="30" y="77" width="351" height="80"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="67"/>
+                    <rect key="frame" x="30" y="77" width="351" height="54"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="47"/>
                     <color key="textColor" red="0.6549019814" green="0.75686275960000005" blue="0.82745099070000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
+                    <variation key="heightClass=compact-widthClass=compact">
+                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <fontDescription key="fontDescription" type="system" pointSize="67"/>
+                    </variation>
                 </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-1a-l2V">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AVg-1a-l2V">
                     <rect key="frame" x="456" y="8" width="380" height="340"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wLP-Cm-0Nq">
-                            <rect key="frame" x="0.0" y="0.0" width="380" height="53.666666666666664"/>
+                            <rect key="frame" x="0.0" y="0.0" width="380" height="60"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUZ-kU-Z9S" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="68" height="53.666666666666664"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUZ-kU-Z9S" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="√"/>
                                     <connections>
                                         <action selector="squareButton:" destination="-1" eventType="touchUpInside" id="4lt-Il-GDN"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLb-JW-l1t" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="78" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="78" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="AC"/>
                                     <connections>
                                         <action selector="acButton:" destination="-1" eventType="touchUpInside" id="QRs-YO-eTX"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHZ-jh-y9d" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="156" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="156" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="⌦"/>
                                     <connections>
                                         <action selector="deleteButton:" destination="-1" eventType="touchUpInside" id="lLa-ga-cCI"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phb-D2-lbw" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="234" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="234" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="%"/>
                                     <connections>
                                         <action selector="percentButton:" destination="-1" eventType="touchUpInside" id="qHB-hM-Daf"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ4-I3-c7u" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="312" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="312" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="÷"/>
                                     <connections>
                                         <action selector="divideButton:" destination="-1" eventType="touchUpInside" id="ggq-wI-Wc2"/>
@@ -75,38 +87,38 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iBp-wx-lWv">
-                            <rect key="frame" x="0.0" y="63.666666666666671" width="380" height="53.666666666666671"/>
+                            <rect key="frame" x="0.0" y="70" width="380" height="60"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL2-MG-A7X" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="68" height="53.666666666666664"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL2-MG-A7X" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="x!"/>
                                     <connections>
                                         <action selector="xFactorial:" destination="-1" eventType="touchUpInside" id="h1h-5l-Rh1"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hz-dF-pKc" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="78" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="78" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="7"/>
                                     <connections>
                                         <action selector="sevenButton:" destination="-1" eventType="touchUpInside" id="d0D-xj-gnE"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGe-fh-ySV" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="156" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="156" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="8"/>
                                     <connections>
                                         <action selector="eightButton:" destination="-1" eventType="touchUpInside" id="v7o-qi-173"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHD-ox-uy2" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="234" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="234" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="9"/>
                                     <connections>
                                         <action selector="nineButton:" destination="-1" eventType="touchUpInside" id="iOS-dq-JBh"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c52-G9-wez" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="312" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="312" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="×"/>
                                     <connections>
                                         <action selector="timesButton:" destination="-1" eventType="touchUpInside" id="FKO-DK-x9P"/>
@@ -115,35 +127,38 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-5L-aZI">
-                            <rect key="frame" x="0.0" y="127.33333333333336" width="380" height="53.666666666666671"/>
+                            <rect key="frame" x="0.0" y="140" width="380" height="60"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bw-vr-5mz" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="π"/>
+                                    <connections>
+                                        <action selector="piNumberButton:" destination="-1" eventType="touchUpInside" id="Wt1-yS-8gQ"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVw-8v-NzO" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="78" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="78" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="4"/>
                                     <connections>
                                         <action selector="fourButton:" destination="-1" eventType="touchUpInside" id="XlL-0Z-ust"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogQ-GZ-gZz" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="156" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="156" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="5"/>
                                     <connections>
                                         <action selector="fiveButton:" destination="-1" eventType="touchUpInside" id="2lq-kd-T5c"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDj-kH-FCj" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="234" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="234" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="6"/>
                                     <connections>
                                         <action selector="sixButton:" destination="-1" eventType="touchUpInside" id="a5o-Rq-e38"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3D-mM-NDP" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="312" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="312" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="−"/>
                                     <connections>
                                         <action selector="minusButton:" destination="-1" eventType="touchUpInside" id="U2F-8W-hmE"/>
@@ -152,35 +167,35 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zRi-sg-CIQ">
-                            <rect key="frame" x="0.0" y="191" width="380" height="53.666666666666657"/>
+                            <rect key="frame" x="0.0" y="210" width="380" height="60"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hia-mT-awD" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="68" height="53.666666666666664"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hia-mT-awD" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="xʸ"/>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLF-Sp-fin" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="78" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="78" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="1"/>
                                     <connections>
                                         <action selector="oneButton:" destination="-1" eventType="touchUpInside" id="CYf-VF-YF9"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJh-G4-pMI" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="156" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="156" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="2"/>
                                     <connections>
                                         <action selector="twoButton:" destination="-1" eventType="touchUpInside" id="Osx-fg-f0p"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02k-8l-U3T" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="234" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="234" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="3"/>
                                     <connections>
                                         <action selector="threeButton:" destination="-1" eventType="touchUpInside" id="QGb-mO-anl"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZA-qq-6mF" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="312" y="0.0" width="68" height="53.666666666666664"/>
+                                    <rect key="frame" x="312" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="+"/>
                                     <connections>
                                         <action selector="plusButton:" destination="-1" eventType="touchUpInside" id="hFz-BH-Qv2"/>
@@ -189,15 +204,27 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lem-Zu-Y4d">
-                            <rect key="frame" x="0.0" y="254.66666666666671" width="380" height="85.333333333333343"/>
+                            <rect key="frame" x="0.0" y="280" width="380" height="60"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-tI-Lmv" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="68" height="85.333333333333329"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-tI-Lmv" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="68" height="60"/>
                                     <inset key="contentEdgeInsets" minX="27" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="10x"/>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment content="10x">
+                                                <attributes>
+                                                    <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <connections>
+                                        <action selector="powersOfTenButton:" destination="-1" eventType="touchUpInside" id="0te-ER-FSK"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Va-Qg-DjX" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="78" y="0.0" width="68" height="85.333333333333329"/>
+                                    <rect key="frame" x="78" y="0.0" width="68" height="60"/>
                                     <inset key="contentEdgeInsets" minX="27" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" title="0"/>
                                     <connections>
@@ -205,14 +232,14 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84Q-1b-Qj0" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="156" y="0.0" width="68" height="85.333333333333329"/>
+                                    <rect key="frame" x="156" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="."/>
                                     <connections>
                                         <action selector="decimalButton:" destination="-1" eventType="touchUpInside" id="HY5-UT-dXm"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUb-Tk-RmA" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="234" y="0.0" width="68" height="85.333333333333329"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUb-Tk-RmA" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="234" y="0.0" width="68" height="60"/>
                                     <inset key="contentEdgeInsets" minX="27" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <state key="normal" title="√"/>
                                     <connections>
@@ -220,7 +247,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wao-g7-9aQ" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
-                                    <rect key="frame" x="312" y="0.0" width="68" height="85.333333333333329"/>
+                                    <rect key="frame" x="312" y="0.0" width="68" height="60"/>
                                     <state key="normal" title="="/>
                                     <connections>
                                         <action selector="equalsButton:" destination="-1" eventType="touchUpInside" id="bdJ-ar-5pq"/>
@@ -244,7 +271,7 @@
                             <include reference="ePi-dT-Uzf"/>
                         </mask>
                     </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
+                    <variation key="heightClass=regular-widthClass=compact" distribution="fillProportionally">
                         <mask key="constraints">
                             <include reference="xX4-WI-Ny0"/>
                         </mask>
